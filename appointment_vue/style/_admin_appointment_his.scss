@@ -1,0 +1,60 @@
+.container-list-history {
+  max-width: 800px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+
+  h2 {
+    text-align: center;
+    color: #0a306e;
+    margin-bottom: 20px;
+  }
+  .search-bar {
+    margin-bottom: 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #0a306e;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  }
+
+  .status-dropdown {
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+  }
+
+  .delete-btn {
+    background: none;
+    border: none;
+    color: #dc3545;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #b52a3a;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@use "variable" as *;
+.cards-section {
+  text-align: center;
+  margin: 20px;
+
+  h2 {
+    color: $blue;
+  }
+
+  .cards {
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+
+    .card {
+      width: 250px;
+      border: 1px solid $gray-light;
+      border-radius: 5px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: $box-shadow-login;
+
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+
+      h3 {
+        margin: 5px 0;
+        color: $blue;
+      }
+
+      p {
+        margin: 5px 0;
+        color: $black-555;
+      }
+
+      .reviews {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: $black-555;
+      }
+    }
+  }
+}

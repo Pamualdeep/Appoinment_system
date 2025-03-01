@@ -1,0 +1,218 @@
+@use "variable" as *;
+.leaves {
+  width: 80%;
+  h1 {
+    text-align: center;
+    color: $blue;
+    margin: 1rem auto;
+  }
+  .main-content-leave {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+
+    .leave-request {
+      border: 2px solid #00a651;
+      border-radius: 10px;
+      padding: 10px;
+      // max-width: 500px;
+      width: 35%;
+      margin: 2rem auto;
+      background-color: #f9f9f9;
+      @media (max-width: 768px) {
+        width: 100%;
+        margin: 2rem auto;
+      }
+
+      .leavepage-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #00a651;
+        color: #fff;
+        padding: 10px;
+        border-radius: 8px 8px 0 0;
+        font-size: 18px;
+        font-weight: bold;
+
+        .info-icon {
+          background-color: #fff;
+          color: #00a651;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+
+      .leave-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+
+        th {
+          text-align: left;
+          padding: 8px;
+          border-bottom: 2px solid #00a651;
+          color: #00a651;
+        }
+
+        td {
+          padding: 8px;
+          border-bottom: 1px solid #ddd;
+
+          &:last-child {
+            text-align: center;
+          }
+        }
+
+        .status {
+          display: inline-block;
+          padding: 5px 10px;
+          border-radius: 5px;
+          font-size: 14px;
+          font-weight: bold;
+
+          &.pending {
+            background-color: #e6f7ff;
+            color: #0056b3;
+          }
+
+          &.approved {
+            background-color: #dff0d8;
+            color: #3c763d;
+          }
+        }
+      }
+    }
+    .leaves-summary {
+      border: 2px solid #d8d8d8;
+      border-radius: 10px;
+      padding: 15px;
+      // max-width: 400px;
+      width: 40%;
+      margin: 2rem auto;
+      background-color: #fff;
+      font-family: Arial, sans-serif;
+      @media (max-width: 768px) {
+        width: 100%;
+        margin: 2rem auto;
+      }
+      .leavepage-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .title {
+          font-size: 18px;
+          font-weight: bold;
+          color: #c9302c;
+        }
+
+        .leave-stats {
+          display: flex;
+          align-items: center;
+
+          .progress-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #f4f4f4;
+            border: 2px solid #c9302c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+            margin-right: 10px;
+          }
+
+          .stats-info {
+            p {
+              margin: 0;
+              font-size: 14px;
+              color: #666;
+            }
+          }
+        }
+      }
+
+      .on-leave {
+        margin-top: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+
+        .on-leave-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid #ddd;
+          padding-bottom: 5px;
+          margin-bottom: 10px;
+
+          span {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+          }
+
+          .dropdown {
+            .dropdown-btn {
+              background-color: #007bff;
+              color: #fff;
+              border: none;
+              border-radius: 5px;
+              padding: 5px 10px;
+              font-size: 14px;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .on-leave-list {
+          .leave-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .profile-icon {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 14px;
+              font-weight: bold;
+              color: #fff;
+              margin-right: 10px;
+            }
+
+            .details {
+              .name {
+                font-size: 14px;
+                font-weight: bold;
+                color: #333;
+                margin: 0;
+              }
+
+              .info {
+                font-size: 12px;
+                color: #666;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,585 @@
+@use "_variable" as *;
+@use "_header_home" as header;
+@use "_home_title" as welcome;
+// @use "_form.scss" as form;
+@use "_home_login" as homelogin;
+@use "_home_card" as BusinessList;
+@use "_home_footer" as homefooter;
+@use "_business_detail" as businessdetail;
+@use "_user_detail" as userdetail;
+@use "_admin_panel1" as adminpanel1;
+@use "_admin_panelsidebar" as adminpanelsidebar;
+@use "_admin_panelstafftiming" as adminpanelstafftiming;
+@use "_admin_paneladdstaff" as adminpaneladdstaf;
+@use "_admin_panelservices" as adminpanelservices;
+@use "_admin_paneladd_subservice" as adminpaneladdsubservice;
+@use "_admin_panelleave" as adminpanelleave;
+@use "_admin_appointment_his" as adminpanelappointmenthistory;
+@use "_admin_appointment" as adminpanelappointment;
+@use "client/_client_service1" as clientservice1;
+@use "client/_client_sub_service" as clientsubservice;
+@use "client/_client_date" as clientdate;
+@use "client/_client_booked" as clientbooked;
+@use "client/_client_checkout" as clientcheckout;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.conatiner {
+  padding: 2rem;
+
+}
+
+.wrapper-row {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  margin: .5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.align_center {
+  align-items: center;
+}
+
+.justify_between {
+  justify-content: space-between;
+}
+
+.justify_around {
+  justify-content: space-around;
+}
+
+.justify_center {
+  justify-content: center;
+}
+
+.justify_end {
+  justify-content: flex-end;
+}
+
+.justify_start {
+  justify-content: flex-start;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.g10 {
+  gap: 10px;
+}
+
+.textdecoration {
+  text-decoration: none;
+}
+
+.row {
+  display: flex;
+}
+
+.message-success {
+  background-color: rgb(219, 186, 213);
+  border: 1px solid #ccc;
+  color: #333;
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 10px;
+}
+
+.message {
+  background-color: rgb(219, 186, 213);
+  border: 1px solid #ccc;
+  color: #333;
+  text-align: center;
+  padding: 2rem;
+  margin: 1.5rem;
+  border-radius: 10px;
+}
+
+.border {
+  border: 1px solid #333;
+  padding: 2rem;
+  margin: 1.5rem;
+  border-radius: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.calendar-container {
+  // background-color: #ccc;
+  // width: 70%;
+  margin: auto;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.day-name,
+.calendar-day {
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+.has-appointment {
+  background-color: red;
+  color: white;
+}
+
+.slot-btn {
+  padding: 8px;
+  margin: 5px;
+}
+
+
+.appointment-list {
+  margin-top: 20px;
+}
+
+
+/* HTML: <div class="tooltip">This is a Tooltip with a solid coloration and without border radius </div> */
+// .tooltip {
+//   color: #fff;
+//   font-size: 18px;
+//   width: 200px;
+//   text-align: center;
+// }
+
+.tooltip2 {
+  /* triangle dimension */
+  --b: 2em;
+  /* base */
+  --h: 1em;
+  /* height */
+
+  --p: 50%;
+  /* triangle position (0%:left 100%:right) */
+
+  padding: 1em;
+  clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%,
+      min(100%, var(--p) + var(--b)/2) 100%,
+      var(--p) calc(100% + var(--h)),
+      max(0%, var(--p) - var(--b)/2) 100%);
+  border-image: fill 0 //var(--h)
+    conic-gradient(#CC333F 0 0);
+  /* the color */
+}
+
+.calendar-day:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #CC333F;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  // width: 80px;
+  text-align: center;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.search-bar {
+  input {
+    padding: 10px;
+    border: 1px solid $gray-ccc;
+    border-radius: 5px;
+    width: 80%
+  }
+}
+
+.w100 {
+  width: 100%;
+}
+
+.w90 {
+  width: 90%;
+}
+
+.w80 {
+  width: 80%;
+}
+
+.w70 {
+  width: 70%;
+}
+
+.w60 {
+  width: 60%;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w40 {
+  width: 40%;
+}
+
+.w30 {
+  width: 30%;
+}
+
+.w20 {
+  width: 20%;
+}
+
+.w10 {
+  width: 10%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1rem 0rem;
+
+}
+
+.lightBlue {
+  background-color: #d0eaf2;
+}
+
+// home page css
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.header-sec {
+  // background: #4CAF50;
+  color: white !important;
+  padding: 50px 20px;
+}
+
+.hero {
+  background: url('../images/appointment-banner.jpg') no-repeat center center/cover;
+  height: 300px;
+  color: white !important;
+  font-size: 32px;
+  font-weight: bold;
+  // line-height: 2.5;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: left;
+  padding-left: 10%;
+}
+
+.btn {
+  background: #ff9800;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  width: fit-content;
+
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.btn-secondary {
+  background: #f44336;
+}
+
+.how-it-works,
+.features,
+.categories {
+  padding: 40px 20px;
+
+  h2 {
+    font-size: 2rem;
+    color: #346173;
+  }
+}
+
+.steps,
+.service-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.step,
+.service {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 25%;
+
+  img {
+    // display: block;
+    // align-items: center;
+    width: 100px;
+    height: auto;
+  }
+
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  // width: 200px;
+  text-align: center;
+
+
+}
+
+.service {
+  text-align: center;
+  FONT-SIZE: 1.2rem;
+  padding: 50px 20px;
+  background-color: #d0eaf2;
+}
+
+.features {
+  background: #f9f9f9;
+  padding: 50px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.features h2 {
+  color: #346173;
+
+}
+
+.features ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+.features li {
+  background: #fff;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 20%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+  img {
+    width: 90px;
+    height: auto;
+    display: block;
+  }
+}
+
+footer {
+  background: #222;
+  color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.search-container {
+  position: relative;
+  display: inline-block;
+  width: 80%;
+}
+
+.search-container::before {
+  content: "\f002";
+  /* Unicode for search icon in Font Awesome */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 10px;
+  top: 35%;
+  transform: translateY(-50%);
+  color: #888;
+
+}
+
+.search-input {
+  padding: 10px 10px 10px 45px !important;
+  /* Space for icon */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+}
+
+.table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table td,
+.table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table tr:hover {
+  background-color: #ddd;
+}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2c5b78;
+  color: white;
+}
+
+
+
+// buttons
+.submit-btn {
+  background: $gradient-background;
+  color: $white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: fit-content;
+  transition: background 0.3s;
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background: $gradient-background;
+  }
+}
+
+/* General form styling */
+.form {
+  width: 80%;
+  margin: 10px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Label styling */
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Text input & Select styling */
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Radio and Checkbox styling */
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.radio-group,
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Button styling */
+button {
+  width: fit-content;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.service-card-list {
+  width: 90%;
+  margin: 8px auto;
+
+  a {
+    text-decoration: none;
+    background-color: #2c5b78;
+    color: #fff;
+    padding: 5px;
+
+    border-radius: 8px;
+    margin: 5px;
+  }
+}

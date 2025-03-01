@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appointment Booking</title>
+  <link rel="stylesheet" href="./style/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.js"></script>
+
+  <!-- axios cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <div id="app">testing</div>
+  <script type="module">
+    import { EmployerLayout } from "./components/layouts/employer_layout.js";
+    import { DefaultLayout } from "./components/layouts/default_layout.js";
+
+    import { RegisterBusiness } from "./components/register_business.js";
+    import { Homelogin } from "./components/login_business.js";
+    import { BusinessList } from "./components/businesslist.js";
+
+    import { Home } from "./components/home.js";
+    import { AdminServices } from "./components/employer/services.js";
+    import { UserDetail } from "./components/employer/user_detail.js";
+    import { BusinessDetail } from "./components/employer/business_detail.js";
+    import { Staff } from "./components/employer/staff.js";
+    import { StaffTiming } from "./components/employer/stafftiming.js";
+    import { Sidebar } from "./components/employer/sidebar.js";
+    import { AdminNav } from "./components/employer/nav.js";
+    import { AdminLeave } from "./components/employer/leave.js";
+    import { AddStaff } from "./components/employer/addstaff.js";
+    // import { Employer } from "./components/employer/employer.js";
+    import { AdminSubService } from "./components/employer/SubService.js";
+    import { AdminAppointment } from "./components/employer/appointment.js";
+    import { AppointmentHistory } from "./components/employer/Appointment_history.js";
+    import { ClientServices } from "./components/client/client_services.js";
+    import { ClientSubService } from "./components/client/client_sub_service.js";
+    import { ClientDate } from "./components/client/client_date.js";
+    import { ClientCheckout } from "./components/client/client_checkout.js";
+    import { ServiceBooked } from "./components/client/client_booked.js";
+    // Define Routes
+    const routes = [
+      {
+        path: "/",
+        component: DefaultLayout,
+        children: [
+          { path: "", name: "Home", component: Home },
+          {
+            path: "/register_business",
+            component: RegisterBusiness,
+
+          },
+          {
+            path: "/login_business", component: Homelogin
+          },
+
+          {
+            path: "/find_business", component: BusinessList
+          },
+        ],
+      },
+      {
+        path: "/employer",
+        component: EmployerLayout,
+        children: [
+          // { path: "employer", name: "Employer", component: Employer },
+          { path: "services", name: "Services", component: AdminServices },
+          { path: "userdetail", name: "UserDetail", component: UserDetail },
+          {
+            path: "businessdetail",
+            name: "BusinessDetail",
+            component: BusinessDetail,
+          },
+          {
+            path: "stafftiming",
+            name: "StaffTiming",
+            component: StaffTiming,
+          },
+          { path: "sidebar", name: "Sidebar", component: Sidebar },
+          { path: "staff", name: "Staff", component: Staff },
+          { path: "nav", name: "nav", component: AdminNav },
+          { path: "leaves", name: "Leave", component: AdminLeave },
+          { path: "addstaff/:id", name: "AddStaff", component: AddStaff },
+          {
+            path: "addsubservice/:sid/:name",
+            name: "AddSubService",
+            component: AdminSubService,
+          },
+          {
+            path: "businessdetail",
+            name: "BusinessDetail",
+            component: BusinessDetail,
+          },
+          {
+            path: "adminappointment",
+            name: "AdminAppointment",
+            component: AdminAppointment,
+          },
+          {
+            path: "AppointmentHistory",
+            name: "AppointmentHistory",
+            component: AppointmentHistory,
+          },
+        ],
+      },
+      {
+        path: "/Client",
+        component: DefaultLayout,
+        children: [
+          {
+            path: "clientservice/:userid",
+            name: "ClientService",
+            component: ClientServices,
+          },
+          {
+            path: "clientsubservice/:serviceid",
+            name: "ClientSubService",
+            component: ClientSubService,
+          },
+          { path: "clientdate", name: "ClientDate", component: ClientDate },
+          {
+            path: "clientcheckout",
+            name: "ClientCheckout",
+            component: ClientCheckout,
+          },
+          {
+            path: "clientbooked",
+            name: "ClientBooked",
+            component: ServiceBooked,
+          },
+        ],
+      },
+    ];
+    // Create Router
+    const router = VueRouter.createRouter({
+      history: VueRouter.createWebHashHistory(), // Use hash mode
+      routes,
+    });
+
+    // Define the root component
+    const App = {
+      template: "<router-view></router-view>",
+    };
+
+    // Create and mount the Vue application
+    const app = Vue.createApp(App);
+    app.use(router);
+    app.mount("#app");
+  </script>
+</body>
+
+</html>

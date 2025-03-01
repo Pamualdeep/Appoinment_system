@@ -1,0 +1,135 @@
+$blue: #005a7f;
+$lightblue: #d0eaf2;
+$green: #008000;
+$box-shadow-login: 0 4px 10px rgba(0, 0, 0, 0.1);
+$white: #fff;
+$black: #000;
+$gray-light: #ddd;
+$gradient-background: linear-gradient(to top, #385c75, #507189);
+$login-box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
+$blue-box-shadow: 0 0 5px rgba(56, 59, 161, 0.5);
+// common color
+$text-color: #282828;
+$black-111: #111;
+$black-222: #222;
+$black-333: #333;
+$black-444: #444;
+$black-555: #555;
+$black-666: #666;
+$black-777: #777;
+$black-888: #888;
+$black-999: #999999;
+$black-45: #454545;
+
+$white-f1: #f1f1f1;
+$white-f2: #f2f2f2;
+$white-f3: #f3f3f3;
+$white-f4: #f4f4f4;
+$white-f5: #f5f5f5;
+$white-f6: #f6f6f6;
+$white-f7: #f7f7f7;
+$white-f8: #f8f8f8;
+$white-f9: #f9f9f9;
+$white-fa: #fafafa;
+$white-fb: #fbfbfb;
+$white-fc: #fcfcfc;
+$white-fd: #fdfdfd;
+$white-fe: #fefefe;
+$gray-lighter: #eee;
+$gray-ddd: #ddd;
+$gray-ccc: #ccc;
+$gray-bbb: #bbb;
+
+//== Responsive Media Query Variables
+//
+
+$xxl-device: "only screen and (min-width: 1400px)";
+$w1320-device: "only screen and (max-width: 1320px)";
+$xl-device: "only screen and (max-width: 1399px)";
+$lg-device: "only screen and (max-width: 1199px)";
+$md-device: "only screen and (max-width: 991px)";
+$sm-device: "only screen and (max-width: 767px)";
+$xs-device: "only screen and (max-width: 575px)";
+$xxs-device: "only screen and (max-width: 479.98px)";
+$xss-device: "only screen and (max-width: 359.98px)";
+
+$xl-down-device: "only screen and (min-width: 1200px)";
+$lg-down-device: "only screen and (min-width: 992px)";
+$lg-up-device: "only screen and (min-width: 992px)";
+$md-up-device: "only screen and (min-width: 768px)";
+
+.w100 {
+  width: 100%;
+
+  @media #{$lg-device} {
+    width: 100%;
+  }
+}
+
+.w90 {
+  width: 90%;
+}
+
+.w85 {
+  width: 85%;
+}
+
+.w80 {
+  width: 80%;
+}
+
+.w75 {
+  width: 75%;
+}
+
+.w70 {
+  width: 70%;
+}
+
+.w60 {
+  width: 60%;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w40 {
+  width: 40%;
+
+  @media #{$lg-device} {
+    width: 100%;
+  }
+}
+
+.w35 {
+  width: 35%;
+}
+
+.w30 {
+  width: 30%;
+}
+
+.w25 {
+  width: 25%;
+}
+
+.w20 {
+  width: 20%;
+
+  @media #{$lg-device} {
+    width: 100%;
+  }
+}
+
+.w15 {
+  width: 15%;
+}
+
+.w10 {
+  width: 10%;
+}
+
+.m-auto {
+  margin: auto;
+}

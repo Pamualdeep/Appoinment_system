@@ -1,0 +1,76 @@
+@use "variable" as *;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .staff-form {
+    padding: 40px;
+    background-color: white;
+    form {
+      .form-row {
+        display: flex; /* Align items horizontally */
+        gap: 20px; /* Space between fields */
+        margin-bottom: 15px;
+
+        .form-group {
+          flex: 1; /* Allow each field to take equal space */
+          display: flex;
+          flex-direction: column;
+
+          label {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+          }
+
+          input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background-color: #f0f0f0;
+
+            &:focus {
+              outline: none;
+              border-color: #10286d;
+            }
+          }
+        }
+      }
+
+      .save-btn {
+        margin-top: 20px;
+        width: 100px;
+        padding: 10px;
+        background-color: #10286d;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #145cc9;
+        }
+      }
+    }
+  }
+}
+
+// Media Query for Smaller Screens
+@media (max-width: 768px) {
+  .staff-form {
+    .form-row {
+      gap: 10px;
+
+      .form-group {
+        flex: 1 1 100%; // Full-width for smaller screens
+      }
+    }
+  }
+}
+
+// Media Query for Small Screens
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column; /* Stack fields vertically on small screens */
+  }
+}

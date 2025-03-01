@@ -1,0 +1,74 @@
+@use "variable" as *;
+// body {
+//   margin: 0;
+//   font-family: Poppins;
+// }
+
+.header {
+  align-items: center;
+  background-color: $lightblue;
+  // padding: 10px 20px;
+  color: $white;
+
+  .logo {
+    @media #{$lg-device} {
+      width: 20%;
+    }
+
+    @media #{$xs-device} {
+      width: 25%;
+    }
+
+    img {
+      width: 100%;
+      margin-bottom: -7px;
+    }
+
+    .agency-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+
+      .creative {
+        color: $green;
+      }
+
+      .agency {
+        color: $white;
+      }
+    }
+  }
+
+  .nav {
+    gap: 20px;
+
+    @media #{$lg-device} {
+      width: 50%;
+    }
+
+    @media #{$xs-device} {
+      width: 60%;
+      gap: 15px;
+    }
+
+    @media #{$xxs-device} {
+      width: 67%;
+      gap: 10px;
+    }
+
+    a {
+      color: $blue;
+      text-decoration: none;
+      font-size: 1rem;
+      margin: 0 1rem;
+      transition: color 0.3s;
+
+      @media #{$xs-device} {
+        font-size: 0.8rem;
+      }
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+}

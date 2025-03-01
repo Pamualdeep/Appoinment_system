@@ -1,0 +1,72 @@
+@use "variable" as *;
+
+// body {
+//   margin: 0;
+//   font-family: Arial, sans-serif;
+//   background-color: $white-f4;
+// }
+
+// .admin-panel {
+
+// }
+
+// Main Content
+.main-content {
+  // display: flex;
+
+  // Staff Details
+  .staff-details {
+    padding: 20px;
+    flex: 1;
+
+    h1 {
+      color: $blue;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+
+      .add-staff {
+        background-color: $blue;
+        color: #fff !important;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+
+      .search-bar {
+        input {
+          padding: 10px;
+          border: 1px solid $gray-ccc;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: $white;
+
+      th,
+      td {
+        border: 1px solid $gray-ccc;
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: $blue;
+        color: $white;
+      }
+    }
+  }
+}

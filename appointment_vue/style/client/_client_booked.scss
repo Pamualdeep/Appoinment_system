@@ -1,0 +1,108 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  text-align: center;
+}
+
+.client_booked_container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.success-icon img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.appointment-detail {
+  margin: 20px 0;
+}
+
+.detail-box {
+  background: #f1f1f1;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.detail-box h3 {
+  margin: 0 0 10px 0;
+  color: #2d89ef;
+}
+
+.appointment-meta {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  gap: 15px;
+}
+
+.appointment-meta p {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.appointment-meta span {
+  margin-right: 8px;
+}
+
+.new-appointment {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.new-appointment:hover {
+  background: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  .container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .detail-box {
+    padding: 10px;
+  }
+
+  .new-appointment {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,91 @@
+$primary-color: #3c4d96;
+$button-color: #4caf50;
+$button-hover-color: #45a049;
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.client_service_container {
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2em;
+  color: $primary-color;
+  margin-bottom: 20px;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.service-card {
+  width: 45%;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    border-color: $primary-color;
+  }
+
+  &.selected {
+    border-color: $primary-color;
+    background-color: #e8effc;
+  }
+
+  .service-icon {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.5em;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    h2 {
+      font-size: 1.4em;
+      color: $primary-color;
+      // margin-bottom: 10px;
+    }
+  }
+
+  p {
+    color: #555;
+    font-size: 1em;
+    margin: 0;
+  }
+}
+
+.next-btn {
+  padding: 15px 30px;
+  background-color: $button-color;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $button-hover-color;
+  }
+
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+}

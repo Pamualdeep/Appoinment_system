@@ -1,0 +1,139 @@
+@use "variable" as *;
+
+.add-sub-service {
+  background: $white;
+  color: $black-333;
+  padding: 20px;
+  width: 100%;
+  // margin: 3rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .table-wrapper {
+    margin-bottom: 20px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th {
+        background-color: #ff8300;
+        color: white;
+        padding: 10px;
+        text-align: left;
+      }
+
+      td {
+        padding: 10px;
+
+        input {
+          width: 90%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+      }
+
+      .add-row {
+        background-color: #ff8300;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .details-wrapper {
+    margin-bottom: 20px;
+
+    // Styles specific to the sub-services table
+    .sub-services-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+
+      .sub-services-row {
+        color: #000;
+
+        &:nth-child(even) {
+          background-color: #f9f9f9; // Alternate row color
+        }
+
+        &:nth-child(odd) {
+          background-color: #fff;
+        }
+
+        &:hover {
+          background-color: #f4f4f4; // Highlight row on hover
+        }
+      }
+
+      .sub-services-cell {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+
+        &:nth-child(1) {
+          text-align: left; // Align the first column to the left
+        }
+      }
+    }
+
+    .details-box {
+      background: white;
+      color: black;
+      border-radius: 4px;
+      padding: 10px;
+      height: 100px;
+      overflow-y: auto;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      div {
+        overflow-x: auto;
+        // overflow-y: auto;
+        margin-bottom: 5px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .save-btn {
+    background-color: #ff8300;
+    color: white;
+    border: none;
+    border-radius: 8px 0px 0px 8px;
+    width: fit-content;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #e76b00;
+    }
+  }
+
+  .cancel-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 0px 8px 8px 0px;
+    width: fit-content;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+
+    // &:hover {
+    //   background-color: #e76b00;
+    // }
+  }
+}

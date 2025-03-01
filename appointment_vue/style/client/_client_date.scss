@@ -1,0 +1,88 @@
+.client_container {
+  // background-color: #f8e8e8;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0px 10px;
+  // flex-direction: column;
+
+  .left-panel {
+    width: 70%;
+    padding: 10px;
+    // border-right: 2px solid #ddd;
+  }
+
+  .right-panel {
+    width: 30%;
+    padding: 10px;
+    // background-color: #f1f1f1;
+    border-radius: 10px;
+  }
+
+}
+
+
+
+.time-slots {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.time-slot {
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.time-slot:hover {
+  background-color: #45a049;
+}
+
+
+
+.date-appointment-card {
+  padding: 15px;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+
+  h3 {
+    font-size: 1.4em;
+    color: #3c4d96;
+  }
+
+  .available-days {
+    color: green;
+  }
+
+  .not-available-days {
+    color: red;
+  }
+}
+
+.next-btn {
+  padding: 15px 30px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #45a049;
+  }
+
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+}

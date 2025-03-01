@@ -1,0 +1,257 @@
+@use "variable" as *;
+
+.auth-section {
+  gap: 5rem;
+  margin: 5rem auto;
+
+  .register-form {
+    background: $white;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: $box-shadow-login;
+    padding: 40px;
+    text-align: center;
+
+    // height: 25rem;
+    @media #{$lg-device} {
+      width: 100%;
+    }
+
+    @media #{$xxs-device} {
+      height: 27rem;
+    }
+
+    .register-header {
+      // position: absolute;
+      top: -2rem;
+      // background: $gradient-background;
+      color: $blue;
+      border-radius: 10px;
+      padding: 10px;
+      z-index: 1;
+
+      @media #{$xxs-device} {
+        width: 60%;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 1.5rem;
+      }
+    }
+
+    form {
+      top: 2rem;
+      z-index: 2;
+      position: relative;
+
+      .form-group {
+        margin-bottom: 15px;
+
+        input {
+          // width: 100%;
+          padding: 10px;
+          border: 1px solid $gray-light;
+          border-radius: 5px;
+          font-size: 0.9rem;
+
+          &:focus {
+            outline: none;
+            border-color: $green;
+            box-shadow: $login-box-shadow;
+          }
+        }
+      }
+
+      .captcha {
+        align-items: center;
+        gap: 10px;
+
+        #captcha-display {
+          background: $white-f4;
+          padding: 10px 15px;
+          font-size: 1rem;
+          border: 1px solid $gray-light;
+          border-radius: 5px;
+          min-width: 70px;
+          text-align: center;
+        }
+
+        .refresh-btn {
+          background: $gray-light;
+          border: none;
+          border-radius: 5px;
+          padding: 0 10px;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background 0.3s;
+
+          &:hover {
+            background: $gray-bbb;
+          }
+        }
+      }
+
+      .submit-btn {
+        background: $gradient-background;
+        color: $white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        width: 100%;
+        transition: background 0.3s;
+
+        &:hover {
+          background: $gradient-background;
+        }
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: $black-555;
+        margin-top: 10px;
+
+        a {
+          color: $blue;
+          text-decoration: none;
+          font-weight: bold;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .login-form {
+    background: $white;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: $box-shadow-login;
+    padding: 40px;
+    text-align: center;
+    // height: 15rem;
+
+    @media #{$lg-device} {
+      width: 100%;
+    }
+
+    @media #{$xxs-device} {
+      height: 17rem;
+    }
+
+    .login-header {
+      width: 80%;
+      // position: absolute;
+      top: -2rem;
+      // background: $gradient-background;
+      color: $blue;
+      border-radius: 10px;
+      padding: 10px;
+      z-index: 1;
+
+      @media #{$xxs-device} {
+        width: 60%;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 1.5rem;
+      }
+    }
+
+    form {
+      top: 2rem;
+      z-index: 2;
+      position: relative;
+
+      .form-group {
+        margin-bottom: 15px;
+
+        input {
+          // width: 100%;
+          padding: 10px;
+          border: 1px solid $gray-light;
+          border-radius: 5px;
+          font-size: 0.9rem;
+
+          &:focus {
+            outline: none;
+            border-color: $green;
+            box-shadow: $login-box-shadow;
+          }
+        }
+      }
+
+      .captcha {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        #captcha-display {
+          background: $white-f4;
+          padding: 10px 15px;
+          font-size: 1rem;
+          border: 1px solid $gray-light;
+          border-radius: 5px;
+          min-width: 70px;
+          text-align: center;
+        }
+
+        .refresh-btn {
+          background: $gray-light;
+          border: none;
+          border-radius: 5px;
+          padding: 0 10px;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background 0.3s;
+
+          &:hover {
+            background: $gray-bbb;
+          }
+        }
+      }
+
+      .submit-btn {
+        background: $gradient-background;
+        color: $white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        width: 100%;
+        transition: background 0.3s;
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
+
+        &:hover {
+          background: $gradient-background;
+        }
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: $black-555;
+        margin-top: 10px;
+
+        a {
+          color: $blue;
+          text-decoration: none;
+          font-weight: bold;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

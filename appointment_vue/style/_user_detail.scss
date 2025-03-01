@@ -1,0 +1,85 @@
+@use "_variable" as *;
+.container-user {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  background-color: $white-f4;
+  height: 45rem;
+
+  .user-details-form {
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: $box-shadow-login;
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+
+    h2 {
+      color: $blue;
+      margin-bottom: 20px;
+    }
+
+    form {
+      .form-row {
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 15px;
+
+        .form-group {
+          flex: 1;
+          max-width: 100%; // add a max-width property
+          margin: 0 10px;
+          display: flex;
+          flex-direction: column;
+
+          label {
+            font-size: 0.9rem;
+            color: $black-555;
+            margin-bottom: 5px;
+            text-align: left;
+          }
+
+          input,
+          textarea {
+            border: 1px solid $gray-ddd;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 0.9rem;
+            color: $black-333;
+
+            &:focus {
+              outline: none;
+              border-color: $blue;
+              box-shadow: $login-box-shadow;
+              // box-shadow: 0 0 5px rgba(56, 59, 161, 0.5);
+            }
+          }
+
+          textarea {
+            resize: none;
+          }
+
+          input[type="date"] {
+            font-family: inherit;
+            color: $black-333;
+          }
+        }
+      }
+
+      .update-btn {
+        background: $gradient-background;
+        border: none;
+        color: $white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: $gradient-background;
+        }
+      }
+    }
+  }
+}

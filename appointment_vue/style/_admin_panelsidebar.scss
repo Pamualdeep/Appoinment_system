@@ -1,0 +1,114 @@
+@use "variable" as *;
+
+.navbar {
+  padding: 10px;
+  align-items: center;
+  background-color: $blue;
+  border-bottom: 10px solid #e5ca77;
+  color: #e5ca77;
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+
+  .logo {
+
+    // background-color: $white;
+    text-align: left;
+
+    img {
+      height: 50px;
+      width: auto;
+      // float: left;
+      margin-right: 10px;
+      // width: 100%;
+    }
+  }
+
+  .navbar-links {
+    gap: 10px;
+
+    button {
+      width: fit-content;
+      // padding: 10px 15px;
+      background-color: #ffffff;
+      color: #3e50b4;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      i {
+        margin-right: 5px;
+      }
+    }
+
+    .profile-dropdown {
+      // position: relative;
+      float: left;
+      overflow: hidden;
+
+      .profile-btn {
+        padding: 10px 15px;
+        background-color: #ffffff;
+        color: #3e50b4;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        // top: 55px;
+        // right: 0;
+        background: $white;
+        border: 1px solid $gray-ccc;
+        border-radius: 5px;
+        z-index: 1;
+
+        a {
+          display: block;
+          float: none;
+          padding: 10px;
+          text-decoration: none;
+          color: black;
+        }
+      }
+
+      &:hover .dropdown-content {
+        display: block;
+      }
+    }
+  }
+}
+
+// Sidebar
+.sidebar {
+  background-color: $blue;
+  color: $white;
+  padding: 10px;
+  text-align: left;
+  min-height: 600px;
+  height: auto;
+
+  h2 {
+    font-size: 1.3rem;
+    margin-top: 10px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: 20px 0;
+
+      a {
+        color: $white;
+        text-decoration: none;
+        font-size: 16px;
+      }
+    }
+  }
+}
